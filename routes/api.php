@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\API\v1\auth\UserController;
+use App\Http\Controllers\API\v1\message\MessageController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -21,3 +22,5 @@ Route::middleware('auth:sanctum')->get('/test', function (Request $request) {
 
 Route::post('/login', [UserController::class, 'login'] );
 Route::post('/register', [UserController::class, 'register'] );
+Route::post('/newProject', [MessageController::class, 'addMessageToDB'] );
+
